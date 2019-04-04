@@ -5,12 +5,14 @@
 	<artifactId>config-service</artifactId>
 
     <name>microservice-base : config-service</name>
-
+	<groupId>me.antoniocaccamo</groupId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<parent>
-		<groupId>me.antoniocaccamo</groupId>
-		<artifactId>microservice-base</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.4.RELEASE</version>
+        <relativePath/>
 	</parent>
 	
     <properties>

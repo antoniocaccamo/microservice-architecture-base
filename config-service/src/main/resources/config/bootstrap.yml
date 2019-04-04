@@ -1,6 +1,5 @@
 server:
   port : 8088
-
 spring:
   application:
     name: config-service
@@ -8,4 +7,4 @@ spring:
     config:
       server:
         git:
-          uri : /opt/development/workspaces/antoniocaccamo/microservice-base/services-config
+          uri : /opt/development/workspaces/antoniocaccamo/services-config

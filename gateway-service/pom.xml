@@ -5,12 +5,12 @@
 	<artifactId>gateway-service</artifactId>
 
     <name>microservice-base : gateway-service</name>
-
-
+	<groupId>me.antoniocaccamo</groupId>
+	<version>0.0.1-SNAPSHOT</version>
 	<parent>
-		<groupId>me.antoniocaccamo</groupId>
-		<artifactId>microservice-base</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.6.RELEASE</version>
 	</parent>
 	
     <properties>
