@@ -1,10 +1,17 @@
 server:
-  port : 8088
+  port : 8888
 spring:
   application:
     name: config-service
+  profiles:
+    active : native
   cloud:
     config:
       server:
-        git:
-          uri : /opt/development/workspaces/antoniocaccamo/services-config
+        native:
+          searchLocations : classpath:config/services
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+
