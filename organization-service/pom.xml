@@ -3,8 +3,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>proxy-service</artifactId>
-	<name>microservice-base: proxy-service</name>
+	<artifactId>organization-service</artifactId>
+	<name>microservice-base: organization-service</name>
 
 	<parent>
 		<groupId>me.antoniocaccamo</groupId>
@@ -15,7 +15,7 @@
 	
     <properties>
 		<java.version>1.8</java.version>
-        <proxy-service.mainClass>microservices.base.proxy.ProxyApplication</proxy-service.mainClass>
+        <proxy-service.mainClass>microservices.base.organization.OrganitationApplication</proxy-service.mainClass>
 	</properties>
 
 	<dependencies>
