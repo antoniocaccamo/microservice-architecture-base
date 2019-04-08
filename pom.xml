@@ -22,7 +22,7 @@
 	<modules>
 		<module>config-service</module>
 		<module>discovery-service</module>
-		<!-- <module>gateway-service</module> -->
+		<module>gateway-service</module>
 		<module>proxy-service</module>
 		<module>organization-service</module>
 	</modules>

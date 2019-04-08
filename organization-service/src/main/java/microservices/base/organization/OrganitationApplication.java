@@ -13,7 +13,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -34,22 +33,12 @@ public class OrganitationApplication {
     public Docket swaggerApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("pl.piomin.services.organization.controller"))
+                .apis(RequestHandlerSelectors.basePackage("microservices.base.organization.rest"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(new ApiInfoBuilder().version("1.0").title("Organization API").description("Documentation Organization API v1.0").build());
     }
 
-
-    @RestController
-    public class OrganizationController {
-
-        @GetMapping
-        public List<String> getAll(){
-            return Arrays.asList("shhhkkkk", "dnaslkfalnf");
-        }
-
-    }
 
 
 }
