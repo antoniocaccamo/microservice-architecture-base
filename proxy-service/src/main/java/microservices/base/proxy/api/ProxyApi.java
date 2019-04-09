@@ -1,3 +1,5 @@
+package microservices.base.proxy.api;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class ProxyApi {
 	public SwaggerResourcesProvider swaggerResourcesProvider() {
 		return () -> {
 			List<SwaggerResource> resources = new ArrayList<>();
-			properties.getRoutes().values().stream()
+            zuulProperties.getRoutes().values().stream()
 					.forEach(route -> resources.add(createResource(route.getServiceId(), route.getId(), "2.0")));
 			return resources;
 		};

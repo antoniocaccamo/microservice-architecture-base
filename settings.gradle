@@ -1,0 +1,15 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+
+rootProject.name = 'microservices-base'
+
+
+
+include 'config-service'
+// include 'discovery-service'
+// include 'gateway-service'
+// include 'proxy-service'
+// include 'organization-service'
