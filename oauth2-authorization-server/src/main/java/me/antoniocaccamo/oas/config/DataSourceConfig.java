@@ -23,12 +23,9 @@ public class DataSourceConfig {
 
     @Bean
     public PasswordEncoder oauthClientPasswordEncoder() {
-        return new BCryptPasswordEncoder(4);
+        return new BCryptPasswordEncoder();
     }
 
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(4);
-    }
+
 }

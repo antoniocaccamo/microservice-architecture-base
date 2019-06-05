@@ -5,6 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>oauth2-authorization-server</artifactId>
+
+    <name>microservice-base : oauth2-authorization-server</name>
     
     <parent>
         <groupId>me.antoniocaccamo</groupId>
