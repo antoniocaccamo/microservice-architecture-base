@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>oauth2-authorization-server</artifactId>
+    <artifactId>oauth2-resource-server</artifactId>
 
-    <name>microservice-base : oauth2-authorization-server</name>
+    <name>microservice-base : oauth2-resource-server</name>
     
     <parent>
         <groupId>me.antoniocaccamo</groupId>
@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <aas-service.mainClass>me.antoniocaccamo.oas.OAuth2ServerApplication</aas-service.mainClass>
+        <aas-service.mainClass>me.antoniocaccamo.ors.OAuth2ResourceApplication</aas-service.mainClass>
     </properties>
 
 
@@ -37,10 +37,10 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -55,6 +55,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
 
         <dependency>
@@ -76,12 +81,6 @@
 
 
 
-
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-            <!--<version>${flywaydb.version}</version>-->
-        </dependency>
 
 
     </dependencies>

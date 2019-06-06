@@ -33,7 +33,9 @@
 		<module>gateway-service</module>
 		<module>proxy-service</module>
 		<module>organization-service</module>
+
 		<module>oauth2-authorization-server</module>
+		<module>oauth2-resource-server</module>
 	</modules>
 
 
@@ -61,12 +63,6 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.8.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-			<!--<version>${flywaydb.version}</version>-->
 		</dependency>
 
 		<dependency>

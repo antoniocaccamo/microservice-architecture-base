@@ -32,7 +32,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     }
 
     @Bean
-    public JdbcClientDetailsService clientDetailsService() {
+    public JdbcClientDetailsService myClientDetailsService() {
         return new JdbcClientDetailsService(oauthDataSource());
     }
 
@@ -53,7 +53,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(clientDetailsService());
+        clients.withClientDetails(myClientDetailsService());
     }
 
     @Override
