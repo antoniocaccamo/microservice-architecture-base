@@ -1,0 +1,2 @@
+INSERT INTO OAUTH_CLIENT_DETAILS
+VALUES('curl_client','product_api', '$2a$10$PcPSN9XxabgdRLgrV0hGduQUV.bK3anhe8ypx0GZIO0/lSGwk1Wha', 'read,write', 'client_credentials', 'http://127.0.0.1', 'ROLE_PRODUCT_ADMIN', 7200, 0, NULL, 'true');

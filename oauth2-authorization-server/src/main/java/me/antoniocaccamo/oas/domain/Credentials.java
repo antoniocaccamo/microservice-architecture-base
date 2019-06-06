@@ -1,5 +1,10 @@
 package me.antoniocaccamo.oas.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
@@ -7,6 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name ="credentials")
+@Data @AllArgsConstructor @NoArgsConstructor
 public class Credentials implements Serializable {
 
     @Id
@@ -27,51 +33,15 @@ public class Credentials implements Serializable {
 
     private boolean enabled;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public List<Authority> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(List<Authority> authorities) {
-        this.authorities = authorities;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    @Override
+    public String toString() {
+        return new org.apache.commons.lang3.builder.ToStringBuilder(this, ToStringStyle.JSON_STYLE)
+                .append("id", id)
+                .append("version", version)
+                .append("name", name)
+                .append("password", password)
+                .append("authorities", authorities)
+                .append("enabled", enabled)
+                .toString();
     }
 }
