@@ -1,7 +1,7 @@
 spring:
   datasource:
       type : com.zaxxer.hikari.HikariDataSource
-      jdbc-url: jdbc:h2:tcp://localhost/~/aas/aas
+      jdbc-url: jdbc:h2:~/oauth2/database/authorization-server
       password: sa
       username: sa
       hikari :
@@ -32,7 +32,6 @@ spring:
 #          format_sql : true
 #          use_sql : true
   flyway:
-    enable    : false
     url       : ${spring.datasource.jdbc-url}
     user      : ${spring.datasource.username}
     password  : ${spring.datasource.password}
