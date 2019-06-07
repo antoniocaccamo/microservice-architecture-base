@@ -1,13 +1,11 @@
-security:
-  oauth2:
-      resource:
-        id: product_api
-        token-info-uri: http://localhost:8081/oauth/check_token
-        prefer-token-info: true
+server:
+  port: 8083
+
 spring:
+
   datasource:
       type: com.zaxxer.hikari.HikariDataSource
-      jdbc-url: jdbc:h2:tcp://localhost/~/aas/aas
+      jdbc-url: jdbc:h2:~/oauth2/database/resource-server
       password: sa
       username: sa
       hikari :
@@ -17,6 +15,7 @@ spring:
         poolName : SpringBootJPAHikariCP
         maxLifetime : 2000000
         connectionTimeout : 30000
+
   jpa:
     hibernate:
       ddl-auto: none
@@ -25,37 +24,16 @@ spring:
         show_sql: true
         dialect: org.hibernate.dialect.H2Dialect
 
-#  jpa :
-#
-#      hibernate :
-#        ddl-auto : validate
-#        connection  :
-#          provider_class : org.hibernate.hikaricp.internal.HikariCPConnectionProvider
-#      properties :
-#        hibernate :
-#          dialect : org.hibernate.dialect.H2Dialect
-#          show_sql : true
-#          format_sql : true
-#          use_sql : true
+#flyway
+  flyway:
+    url       : ${spring.datasource.jdbc-url}
+    user      : ${spring.datasource.username}
+    password  : ${spring.datasource.password}
 
-
-
-# spring.jpa.
-# spring:
-#     datasource:
-#         hikari:
-#             connection-test-query: SELECT 1 FROM DUAL
-#             minimum-idle: 1
-#             maximum-pool-size: 5
-#         driver-class-name: com.mysql.jdbc.Driver
-#         jdbc-url: jdbc:mysql://localhost/oauth2
-#         username: root
-#         password:
-#         initialization-mode: always
-#     jpa:
-#       hibernate:
-#         ddl-auto: none
-#
-# --- server
-server:
-  port: 8083
+# oauth params
+client:
+  client-id:     curl_client
+  client-secret: password
+resource:
+  id: product_api
+  token-info-uri: http://localhost:8081/oauth/check_token

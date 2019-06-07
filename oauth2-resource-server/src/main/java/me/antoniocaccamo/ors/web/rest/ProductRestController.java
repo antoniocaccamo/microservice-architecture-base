@@ -1,6 +1,7 @@
 package me.antoniocaccamo.ors.web.rest;
 
 
+import me.antoniocaccamo.ors.configuration.ResourcesServerConfiguration;
 import me.antoniocaccamo.ors.domain.Product;
 import me.antoniocaccamo.ors.repository.ProductRepository;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,7 +23,9 @@ public class ProductRestController {
     public ProductRestController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
+
     @GetMapping
+    @PreAuthorize(ResourcesServerConfiguration.SECURED_READ_SCOPE)
     public List<Product> products() {
         return productRepository.findAll();
     }
