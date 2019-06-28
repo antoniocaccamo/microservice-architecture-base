@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>proxy-service</artifactId>
-	<name>microservice-base: proxy-service</name>
+	<name>microservice-base : proxy-service</name>
 
 	<parent>
 		<groupId>me.antoniocaccamo</groupId>

@@ -1,0 +1,32 @@
+version: '3'
+
+networks: 
+  ms-net:
+
+services:
+  oauth2-authorization-server:
+#   build: oauth2-authorization-server
+    image: "antoniocaccamo/ms-config-server"
+    ports:
+      - "8081:8081"
+    networks: 
+      - ms-net
+
+  oauth2-resource-server:
+#   build: oauth2-resource-server
+    image: "antoniocaccamo/oauth2-resource-server"
+    ports:
+      - "8083:8083"
+    depends_on: 
+      - "oauth2-authorization-server"
+    networks: 
+      - ms-net
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 300M
+      restart_policy:
+        condition: on-failure
+
