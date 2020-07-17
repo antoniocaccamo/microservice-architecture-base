@@ -2,6 +2,7 @@ package microservices.base.proxy.api;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
@@ -22,19 +23,25 @@ public class ProxyApi {
 	@Primary
 	@Bean
 	public SwaggerResourcesProvider swaggerResourcesProvider() {
+
 		return () -> {
-			List<SwaggerResource> resources = new ArrayList<>();
-            zuulProperties.getRoutes().values().stream()
-					.forEach(route -> resources.add(createResource(route.getServiceId(), route.getId(), "2.0")));
-			return resources;
+			return
+			zuulProperties.getRoutes().values().stream()
+					.map(this::route2resource)
+					.collect(Collectors.toList())
+					;
+
 		};
 	}
 
-	private SwaggerResource createResource(String name, String location, String version) {
+	private SwaggerResource route2resource(ZuulProperties.ZuulRoute zuulRoute) {
+
 		SwaggerResource swaggerResource = new SwaggerResource();
-		swaggerResource.setName(name);
-		swaggerResource.setLocation("/" + location + "/v2/api-docs");
-		swaggerResource.setSwaggerVersion(version);
+		swaggerResource.setName(zuulRoute.getServiceId());
+		swaggerResource.setLocation(String.format("/%s/v2/api-docs", zuulRoute.getId()));
+		swaggerResource.setSwaggerVersion("1.0.0");
 		return swaggerResource;
 	}
+
+
 }
